@@ -1,0 +1,91 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        text-align: center;
+    }
+}
+
+.filter-button {
+    width: fit-content;
+    display: block;
+    margin-inline: auto;
+    border: none;
+    background-color: $background-button;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-block: 20px;
+    transition: background-color 0.25s;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: none;
+        background-color: $background-button-hover;
+    }
+}
+
+h1 {
+    color: $font-color;
+    @include main-font-center;
+}
+
+header {
+    h1 {
+        color: $font-color-third;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+    }
+}
