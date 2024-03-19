@@ -9,7 +9,7 @@ class Comic extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    /*     protected $fillable = [
         'title',
         'description',
         'thumb',
@@ -17,5 +17,7 @@ class Comic extends Model
         'series',
         'sale_date',
         'type'
-    ];
+    ]; */
+
+    protected $guarded = [];
 }

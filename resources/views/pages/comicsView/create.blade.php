@@ -35,7 +35,7 @@
         <label for="type">Genere</label>
         <input type="text" id="type" name="type" placeholder="Type">
 
-        <input type="submit" value="Invia">
+        <input class="button" type="submit" value="Invia">
     </form>
 
 @endsection

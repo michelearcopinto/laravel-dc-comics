@@ -30,6 +30,9 @@
                         <li><strong>Prezzo: </strong>{{ $item->price }}</li>
                         <li><strong>Disponibile dal: </strong>{{ $item->sale_date }}</li>
                     </ul>
+                    <a class="button" href="{{ route('comics.edit', ['comic' => $item->id]) }}">Modifica fumetto</a>
+                    <a class="button btn-delete" href="{{ route('comics.confirm', ['comic' => $item->id]) }}">Elimina
+                        fumetto</a>
                 </div>
             </div>
         @endforeach
