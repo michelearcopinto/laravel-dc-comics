@@ -20,13 +20,7 @@
 @endsection
 
 @section('main_content')
-    <h1>{{ $greeting }}</h1>
+    <h1>Pagina Home</h1>
 
-    <ul>
-        @foreach ($data as $element)
-            <li>
-                {{ $element['name'] }}
-            </li>
-        @endforeach
-    </ul>
+    <a class="button" href="{{ route('comics.index') }}">Vai a tutti i fumetti</a>
 @endsection

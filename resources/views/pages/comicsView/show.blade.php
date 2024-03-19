@@ -27,4 +27,6 @@
             </ul>
         </div>
     </div>
+
+    <a class="button" href="{{ route('comics.index') }}">Torna a tutti i fumetti</a>
 @endsection
