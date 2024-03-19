@@ -13,14 +13,8 @@
 </head>
 
 <body>
-    <header>
-        @include('components.header')
-    </header>
-
     <main>
-        <div>
-            @yield('content')
-        </div>
+        @yield('main_content')
     </main>
 </body>
 
