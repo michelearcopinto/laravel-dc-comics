@@ -10,6 +10,16 @@
 @section('main_content')
     <h1>create di comics</h1>
 
+    @if ($errors->any())
+        <div class="alert-box">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form action="{{ route('comics.store') }}" method="POST">
 
         @csrf
@@ -35,7 +45,7 @@
         <label for="type">Genere</label>
         <input type="text" id="type" name="type" placeholder="Type">
 
-        <input class="button" type="submit" value="Invia">
+        <input class="button" type="submit" value="Crea">
     </form>
 
 @endsection

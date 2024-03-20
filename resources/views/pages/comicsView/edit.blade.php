@@ -10,6 +10,16 @@
 @section('main_content')
     <h1>edit di comics</h1>
 
+    @if ($errors->any())
+        <div class="alert-box">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form action="{{ route('comics.update', ['comic' => $comic->id]) }}" method="POST">
 
         @csrf
@@ -37,6 +47,6 @@
         <label for="type">Genere</label>
         <input type="text" id="type" name="type" placeholder="Type" value="{{ $comic->type }}">
 
-        <input type="submit" value="Invia">
+        <input class="button" type="submit" value="Modifica">
     </form>
 @endsection

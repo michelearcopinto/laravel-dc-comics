@@ -31,6 +31,16 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'thumb' => 'required|url',
+            'price' => 'required|string',
+            'series' => 'required|string',
+            'sale_date' => 'required|date_format:Y-m-d',
+            'type' => 'required|string|in:comic book,graphic novel',
+        ]);
+
         $form_data = $request->all();
 
         $newComic = new Comic();
@@ -63,15 +73,25 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'thumb' => 'required|url',
+            'price' => 'required|string',
+            'series' => 'required|string',
+            'sale_date' => 'required|date_format:Y-m-d',
+            'type' => 'required|string|in:comic book,graphic novel',
+        ]);
+
         $form_data = $request->all();
 
         $comic->update($form_data);
 
-        return redirect()->route('comics.show', ['comic' => $comic->id]);
+        return redirect()->route('comics.show', compact('comic'));
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Show the confirm for deleting the specified resource.
      */
     public function confirm(Comic $comic)
     {
